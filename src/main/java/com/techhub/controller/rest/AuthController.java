@@ -1,7 +1,7 @@
 package com.techhub.controller.rest;
 
-import com.techhub.payload.request.LoginRequest;
-import com.techhub.payload.response.LoginResponse;
+import com.techhub.dto.request.LoginRequest;
+import com.techhub.dto.reponse.LoginResponse;
 import com.techhub.security.JwtTokenProvider;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

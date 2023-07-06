@@ -1,4 +1,4 @@
-package com.techhub.payload.response;
+package com.techhub.dto.reponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

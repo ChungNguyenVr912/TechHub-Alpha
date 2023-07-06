@@ -1,4 +1,4 @@
-package com.techhub.dto;
+package com.techhub.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

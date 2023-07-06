@@ -27,7 +27,6 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import javax.servlet.Filter;
-import javax.servlet.http.HttpServletResponse;
 
 @EnableAutoConfiguration
 @EnableWebSecurity

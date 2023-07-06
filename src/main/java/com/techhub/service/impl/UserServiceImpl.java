@@ -1,8 +1,8 @@
 package com.techhub.service.impl;
 
 
-import com.techhub.dto.UserDto;
-import com.techhub.dto.UserRegisterDto;
+import com.techhub.dto.reponse.UserResponseDto;
+import com.techhub.dto.request.UserRegisterDto;
 import com.techhub.entity.Role;
 import com.techhub.entity.User;
 import com.techhub.repository.RoleRepository;
@@ -42,17 +42,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Iterable<UserDto> findAll() {
+    public Iterable<UserResponseDto> findAll() {
         Iterable<User> entities = userRepository.findAll();
         return StreamSupport.stream(entities.spliterator(), true)
-                .map(entity -> modelMapper.map(entity, UserDto.class))
+                .map(entity -> modelMapper.map(entity, UserResponseDto.class))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public Optional<UserDto> findById(UUID id) {
+    public Optional<UserResponseDto> findById(UUID id) {
         Optional<User> user = userRepository.findById(id);
-        return Optional.ofNullable(modelMapper.map(user, UserDto.class));
+        return Optional.ofNullable(modelMapper.map(user, UserResponseDto.class));
     }
 
     @Override
@@ -61,25 +61,25 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserDto> getUsers() {
+    public List<UserResponseDto> getUsers() {
         List<User> users = userRepository.findAll();
         return users.stream()
-                .map(user -> modelMapper.map(user, UserDto.class))
+                .map(user -> modelMapper.map(user, UserResponseDto.class))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public List<UserDto> getUsersByFullName(String fullName) {
+    public List<UserResponseDto> getUsersByFullName(String fullName) {
         List<User> users = userRepository.findByFullNameLike(fullName);
         return users.stream()
-                .map(user -> modelMapper.map(user, UserDto.class))
+                .map(user -> modelMapper.map(user, UserResponseDto.class))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public UserDto getUserById(UUID id) {
+    public UserResponseDto getUserById(UUID id) {
         User user = userRepository.findById(id).orElse(null);
-        return modelMapper.map(user, UserDto.class);
+        return modelMapper.map(user, UserResponseDto.class);
     }
 
     @Override

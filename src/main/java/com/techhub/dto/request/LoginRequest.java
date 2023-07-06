@@ -1,18 +1,20 @@
-package com.techhub.dto;
+package com.techhub.dto.request;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class UserDto {
+public class LoginRequest {
+
+    @NotBlank
     private String username;
-    private String email;
-    private String fullName;
-    private String avatar;
+
+    @NotBlank
+    private String password;
 }

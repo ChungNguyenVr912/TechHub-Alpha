@@ -1,11 +1,10 @@
 package com.techhub.controller.rest;
 
 
-import com.techhub.dto.UserDto;
-import com.techhub.dto.UserRegisterDto;
+import com.techhub.dto.reponse.UserResponseDto;
+import com.techhub.dto.request.UserRegisterDto;
 import com.techhub.service.SecurityService;
 import com.techhub.service.UserService;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -45,11 +43,11 @@ public class UserController {
         if (!securityService.isAuthenticated() && !securityService.isValidToken(authToken)) {
             return new ResponseEntity<>("Responding with unauthorized error. Message - {}", HttpStatus.UNAUTHORIZED);
         }
-        List<UserDto> userDtos = userService.getUsers();
-        if (userDtos.isEmpty()) {
-            return new ResponseEntity<List<UserDto>>(HttpStatus.NO_CONTENT);
+        List<UserResponseDto> userResponseDtos = userService.getUsers();
+        if (userResponseDtos.isEmpty()) {
+            return new ResponseEntity<List<UserResponseDto>>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(userDtos, HttpStatus.OK);
+        return new ResponseEntity<>(userResponseDtos, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -58,11 +56,11 @@ public class UserController {
         if (!securityService.isAuthenticated() && !securityService.isValidToken(authToken)) {
             return new ResponseEntity<>("Responding with unauthorized error. Message - {}", HttpStatus.UNAUTHORIZED);
         }
-        UserDto userDto = userService.getUserById(UUID.fromString(id));
-        if (userDto == null) {
-            return new ResponseEntity<UserDto>(HttpStatus.NOT_FOUND);
+        UserResponseDto userResponseDto = userService.getUserById(UUID.fromString(id));
+        if (userResponseDto == null) {
+            return new ResponseEntity<UserResponseDto>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(userDto, HttpStatus.OK);
+        return new ResponseEntity<>(userResponseDto, HttpStatus.OK);
     }
 
     @PostMapping("/search")
@@ -71,14 +69,14 @@ public class UserController {
         if (!securityService.isAuthenticated() && !securityService.isValidToken(authToken)) {
             return new ResponseEntity<>("Responding with unauthorized error. Message - {}", HttpStatus.UNAUTHORIZED);
         }
-        List<UserDto> userDtos = null;
+        List<UserResponseDto> userResponseDtos = null;
         if (keyWord != null && !keyWord.isEmpty()) {
-            userDtos = userService.getUsersByFullName(keyWord);
-            if (userDtos.isEmpty()) {
-                return new ResponseEntity<List<UserDto>>(HttpStatus.NO_CONTENT);
+            userResponseDtos = userService.getUsersByFullName(keyWord);
+            if (userResponseDtos.isEmpty()) {
+                return new ResponseEntity<List<UserResponseDto>>(HttpStatus.NO_CONTENT);
             }
         }
-        return new ResponseEntity<>(userDtos, HttpStatus.OK);
+        return new ResponseEntity<>(userResponseDtos, HttpStatus.OK);
     }
 
     @PostMapping(value = "/register")

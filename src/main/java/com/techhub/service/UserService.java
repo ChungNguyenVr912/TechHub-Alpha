@@ -1,8 +1,8 @@
 package com.techhub.service;
 
 
-import com.techhub.dto.UserDto;
-import com.techhub.dto.UserRegisterDto;
+import com.techhub.dto.reponse.UserResponseDto;
+import com.techhub.dto.request.UserRegisterDto;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,11 +10,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface UserService {
-    List<UserDto> getUsers();
-    List<UserDto> getUsersByFullName(String fullName);
-    UserDto getUserById(UUID id);
-    Iterable<UserDto> findAll();
-    Optional<UserDto> findById(UUID id);
+    List<UserResponseDto> getUsers();
+    List<UserResponseDto> getUsersByFullName(String fullName);
+    UserResponseDto getUserById(UUID id);
+    Iterable<UserResponseDto> findAll();
+    Optional<UserResponseDto> findById(UUID id);
     boolean save(UserRegisterDto user) throws IOException;
     void remove(UUID id);
 }
