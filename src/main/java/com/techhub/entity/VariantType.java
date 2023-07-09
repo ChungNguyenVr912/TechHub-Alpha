@@ -28,7 +28,7 @@ public class VariantType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String type;
+    private String name;
     @ManyToMany
     @JoinTable(name = "product_variant_type"
     ,joinColumns = @JoinColumn(name = "variant_type_id")

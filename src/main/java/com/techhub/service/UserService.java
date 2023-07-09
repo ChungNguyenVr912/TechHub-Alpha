@@ -17,4 +17,6 @@ public interface UserService {
     Optional<UserResponseDto> findById(UUID id);
     boolean save(UserRegisterDto user) throws IOException;
     void remove(UUID id);
+
+    UserResponseDto findByUsername(String username);
 }

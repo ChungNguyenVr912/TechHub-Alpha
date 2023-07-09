@@ -24,7 +24,7 @@ $(function () {
             success: function(response,status,jqXHR) {
                 console.log(jqXHR+' : '+status);
                 console.log(response);
-                window.location.replace('/users')
+                window.location.replace('/users/login')
             },
             error: function(xhr, status, error) {
                 console.log(error.status + ':' + status);
@@ -91,3 +91,14 @@ function deleteCustomer(id) {
         }
     );
 }
+
+$('#avatar').change( function (event){
+    const [file] = this.files;
+    const preview = $('#preview');
+    if (file) {
+        preview.attr('src', URL.createObjectURL(file));
+        preview.removeAttr('hidden');
+    }else {
+        preview.attr('hidden','hidden')
+    }
+});

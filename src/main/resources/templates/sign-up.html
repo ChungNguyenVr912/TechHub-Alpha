@@ -17,17 +17,15 @@
             crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/d625a478fd.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <style>
-        .err-mess {
-            color: #e96075;
-            margin-left: 1em;
-            font-size: 0.8em;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/css/sign-up.css">
+    <link rel="stylesheet" th:href="@{/css/sign-up.css}">
+    <link rel="stylesheet" th:href="@{/css/nav.css}">
 </head>
 <body>
-<div class="container-lg mt-4 p-2 w-50 link-secondary bg-gradient border rounded-3">
-    <h1>Create User</h1>
+<div th:replace="home :: nav"></div>
+<div th:replace="home :: nav-toogle"></div>
+<div class="container-lg mt-4 py-3 px-4 col-md-6 bg-light bg-opacity-75 bg-gradient border rounded-3">
+    <h1 class="text-black-50 text-center">Create User</h1>
     <small style="color: #4ec07d"></small>
     <form action="#" class="form-floating" id="customer-form" method="post">
         <div class="form-floating mb-3">
@@ -42,7 +40,7 @@
                    placeholder="name@example.com">
             <label for="email">Email address</label>
             <div class="err-mess">
-                <span ></span>
+                <span></span>
             </div>
         </div>
         <div class="form-floating mb-3">
@@ -53,19 +51,31 @@
                 <span></span>
             </div>
         </div>
-        <div class="form-floating mb-3">
-            <input type="file" class="form-control" name="avatar" id="avatar" placeholder="Upload your avatar">
-            <label for="avatar">Upload avatar</label>
-            <div class="err-mess">
-                <span></span>
+        <div class="d-flex justify-content-between">
+            <div class="preview col-md-3 border rounded-2">
+                <img id="preview" class="rounded-2" src="#" alt=""
+                     hidden="hidden">
             </div>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="col-md-9 ms-2">
+                <div class="form-floating mb-3 d-flex">
+                    <input type="file" multiple class="form-control" name="avatar" id="avatar"
+                           placeholder="Upload your avatar">
+                    <label for="avatar">Upload avatar</label>
+                </div>
+                <div class="">
+                    <button id="submit-button" type="submit" class="btn btn-primary w-100">Submit</button>
+                    <div class="text-center mt-2 d-flex justify-content-center">
+                        <span class="me-2">Already have account? </span>
+                        <a class="link-info" th:href="@{/users/login}">Login</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 
 </div>
-<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/js/sign-up.js}"></script>
+<script th:src="@{/js/nav.js}"></script>
+<script src="../static/js/sign-up.js"></script>
 </body>
 </html>

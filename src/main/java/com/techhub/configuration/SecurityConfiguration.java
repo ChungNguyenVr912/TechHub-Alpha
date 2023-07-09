@@ -5,9 +5,9 @@ import com.techhub.security.JwtAuthEntryPoint;
 import com.techhub.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -27,8 +27,9 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import javax.servlet.Filter;
+import javax.servlet.http.HttpServletResponse;
 
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 @EnableWebSecurity
 @ComponentScan(basePackageClasses = {
         UserDetailsServiceImpl.class,
@@ -80,7 +81,7 @@ public class SecurityConfiguration {
                 .configurationSource(corsConfigurationSource())
                 .and()
                 .csrf()
-                .disable();
+                .ignoringAntMatchers("/api/**");
 
         http.exceptionHandling()
                 .authenticationEntryPoint(unauthorizedHandler)
@@ -89,43 +90,35 @@ public class SecurityConfiguration {
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        http.authorizeHttpRequests() // links start with /api/
-                .antMatchers("/api/users/register", "/api/auth/login") // perform segregate authorize
-                .permitAll();
-
-        // Pages require login with role: ROLE_ADMIN.
-        // If not login at admin role yet, redirect to /login
         http.authorizeHttpRequests()
-                .antMatchers("/api/role/**", "api/users/all")
+                .antMatchers("/api/admin/**")
                 .hasRole("ADMIN");
 
-        // Pages require login with role: ROLE_USER
-        // If not login at user role yet, redirect to /login
-//        http.authorizeHttpRequests()
-//                .antMatchers("/api/users/**")
-//                .hasRole("USER");
+        http.logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/home")
+                .invalidateHttpSession(true)
+                .clearAuthentication(true);
 
-        // When user login with ROLE_USER, but try to
-        // access pages require ROLE_ADMIN, redirect to /error-403
         http.authorizeHttpRequests().and().exceptionHandling()
                 .authenticationEntryPoint(((request, response, authException) -> {
-//                    response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
-                    response.sendRedirect("/error/401");
+                    response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized!");
                 }))
                 .accessDeniedHandler(((request, response, accessDeniedException) -> {
-//                    response.sendError(HttpServletResponse.SC_FORBIDDEN, "Forbidden");
-                    response.sendRedirect("/error/403");
+                    response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access denied!");
                 }))
                 .defaultAuthenticationEntryPointFor(
                         new HttpStatusEntryPoint(HttpStatus.BAD_REQUEST),
-                        new AntPathRequestMatcher("/api/**")
-                );
+                        new AntPathRequestMatcher("/api/**"));
 
         // Configure remember me (save token in database)
-        http.authorizeHttpRequests()
-                .and().rememberMe()
+        http.rememberMe()
+                .key("uniqueAndSecretKey")
+                .rememberMeParameter("remember")
+                .rememberMeCookieName("rememberCookie")
                 .tokenRepository(this.persistentTokenRepository())
-                .tokenValiditySeconds(24 * 60 * 60);//24 hours
+                .tokenValiditySeconds(7 * 24 * 60 * 60);//7 days
+
 
         // Use JwtAuthorizationFilter to check token -> get user info
         http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);

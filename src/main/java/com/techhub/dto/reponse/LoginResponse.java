@@ -17,5 +17,5 @@ public class LoginResponse {
     private String message;
     @Nullable
     private String token;
-
+    private UserResponseDto user;
 }

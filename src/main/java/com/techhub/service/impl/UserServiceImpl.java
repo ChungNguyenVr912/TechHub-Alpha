@@ -10,6 +10,7 @@ import com.techhub.repository.UserRepository;
 import com.techhub.service.ImageService;
 import com.techhub.service.UserService;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -61,6 +62,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserResponseDto findByUsername(String username) {
+        User user = userRepository.findByUsername(username);
+        UserResponseDto userResponseDto = new UserResponseDto();
+        BeanUtils.copyProperties(user, userResponseDto);
+        return userResponseDto;
+    }
+
+    @Override
     public List<UserResponseDto> getUsers() {
         List<User> users = userRepository.findAll();
         return users.stream()
@@ -87,10 +96,13 @@ public class UserServiceImpl implements UserService {
         String hashedPassword = BCrypt.hashpw(userRegisterDto.getPassword(), BCrypt.gensalt(10));
         userRegisterDto.setPassword(hashedPassword);
         MultipartFile avatar = userRegisterDto.getAvatar();
-        String filename = imageService.save(avatar);
-        String imgUrl = imageService.getImageUrl(filename);
+        String filename;
+        String imgUrl = null;
+        if (avatar != null) {
+            filename = imageService.save(avatar);
+            imgUrl = imageService.getImageUrl(filename);
+        }
         Role role = roleRepository.findById(3L).orElse(Role.builder().id(4L).roleName("OTHER").build());
-//        UUID uuid = UUID.nameUUIDFromBytes(userRegisterDto.getUsername().getBytes());
         User user = User.builder()
                 .username(userRegisterDto.getUsername())
                 .email(userRegisterDto.getEmail())

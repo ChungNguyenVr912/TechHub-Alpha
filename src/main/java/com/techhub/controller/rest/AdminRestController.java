@@ -1,16 +1,12 @@
 package com.techhub.controller.rest;
 
-
 import com.techhub.dto.reponse.UserResponseDto;
-import com.techhub.dto.request.UserRegisterDto;
 import com.techhub.service.SecurityService;
 import com.techhub.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,28 +14,26 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
-@CrossOrigin(value = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/users")
-public class UserController {
-
+@RequestMapping("/api/admin")
+public class AdminRestController {
     private final UserService userService;
 
     private final SecurityService securityService;
 
-    public UserController(UserService userService, SecurityService securityService) {
+    public AdminRestController(UserService userService, SecurityService securityService) {
         this.userService = userService;
         this.securityService = securityService;
     }
-
-    @GetMapping({"/all"})
-    public ResponseEntity<?> getAll(@RequestHeader("Authorization") final String authToken) {
+    @GetMapping({"/users"})
+    public ResponseEntity<?> getAll(@RequestHeader("Authorization") final String authToken, HttpServletRequest request
+            , @CookieValue(value = "accessToken",defaultValue = "") String token) {
+        Cookie[] cookies = request.getCookies();
         if (!securityService.isAuthenticated() && !securityService.isValidToken(authToken)) {
             return new ResponseEntity<>("Responding with unauthorized error. Message - {}", HttpStatus.UNAUTHORIZED);
         }
@@ -50,7 +44,7 @@ public class UserController {
         return new ResponseEntity<>(userResponseDtos, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/users/{id}")
     public ResponseEntity<?> getOne(@PathVariable("id") String id,
                                     @RequestHeader("Authorization") final String authToken) {
         if (!securityService.isAuthenticated() && !securityService.isValidToken(authToken)) {
@@ -63,7 +57,7 @@ public class UserController {
         return new ResponseEntity<>(userResponseDto, HttpStatus.OK);
     }
 
-    @PostMapping("/search")
+    @PostMapping("/users/search")
     public ResponseEntity<?> search(@RequestBody String keyWord,
                                     @RequestHeader("Authorization") final String authToken) {
         if (!securityService.isAuthenticated() && !securityService.isValidToken(authToken)) {
@@ -77,16 +71,5 @@ public class UserController {
             }
         }
         return new ResponseEntity<>(userResponseDtos, HttpStatus.OK);
-    }
-
-    @PostMapping(value = "/register")
-    public ResponseEntity<?> create(@Valid @ModelAttribute UserRegisterDto registerDto
-            , BindingResult bindingResult, HttpServletRequest request) throws IOException {
-        if (bindingResult.hasErrors()) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        } else {
-            userService.save(registerDto);
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
     }
 }

@@ -13,7 +13,7 @@ public class AccessExceptionController {
     }
     @GetMapping("/401")
     public String sendUnauthorizedPage(){
-        return "error/401";
+        return "login";
     }
     @GetMapping("/403")
     public String sendForbiddenPage(){

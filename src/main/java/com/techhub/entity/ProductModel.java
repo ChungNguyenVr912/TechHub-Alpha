@@ -33,8 +33,8 @@ public class ProductModel {
     private Product product;
     @ManyToOne
     @JoinColumn(name = "variant_classify_1", referencedColumnName = "id")
-    private Variant variant1;
+    private Variant firstVariant;
     @ManyToOne
     @JoinColumn(name = "variant_classify_2", referencedColumnName = "id")
-    private Variant variant2;
+    private Variant secondVariant;
 }

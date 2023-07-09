@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="theme_switchable">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -17,25 +17,167 @@
             crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/d625a478fd.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <link rel="stylesheet"  th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <link rel="stylesheet" th:href="@{/css/nav.css}">
+    <link rel="stylesheet" th:href="@{/css/expand-card.css}">
+    <link rel="stylesheet" href="../static/css/expand-card.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="../static/css/nav.css">
 </head>
 <body>
-<h1>home</h1>
-<div>
-    <button class="button" id="cart">
-        <span>Add to cart</span>
-        <span class="cart">
-        <svg viewBox="0 0 36 26">
-            <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
-            <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
-        </svg>
-    </span>
-    </button>
-    <button class="btn btn-primary" id="getList">Get List</button>
+<div class="overlay-navigation" th:fragment="nav">
+    <nav role="navigation">
+        <ul>
+            <li><a href="/home" data-content="The beginning">Trang chủ</a></li>
+            <li><a href="#" data-content="Curious?">Khám phá</a></li>
+            <li><a href="#" data-content="About us">Tìm hiểu thêm</a></li>
+            <li><a href="#" data-content="your rights">Các chính sách</a></li>
+            <li><a href="#" data-content="Work with us?">Liên hệ</a></li>
+        </ul>
+    </nav>
 </div>
-<div id="show">
+
+<div class="home">
+    <div class="left-option d-flex flex-column align-items-center">
+        <div class="table_center">
+            <div class="drop-down">
+                <div id="dropDown" class="drop-down__button">
+                    <a href="#" id="account">
+                        <i class="fa-regular fa-user fa-2xl" style="color: #d3d3d3;"></i></a>
+                </div>
+                <div class="drop-down__menu-box position-absolute z-3">
+                    <ul class="drop-down__menu">
+                        <li data-name="profile" class="drop-down__item" id="profile">Your Profile</li>
+                        <li data-name="dashboard" class="drop-down__item" id="dashboard">Dashboard</li>
+                        <li data-name="activity" class="drop-down__item" id="logout">Logout
+                            <svg viewBox="0 0 24 24" fill="none"
+                                 class="drop-down__item-icon" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path opacity="0.5" d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.2429 22 18.8286 22 16.0002 22H15.0002C12.1718 22 10.7576 22 9.87889 21.1213C9.11051 20.3529 9.01406 19.175 9.00195 17" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                                    <path d="M15 12L2 12M2 12L5.5 9M2 12L5.5 15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <a class="cart mt-5" href="#">
+            <span class="count" id="cart-item-count">0</span>
+            <i class="fa-solid fa-cart-shopping fa-2xl material-icons"></i>
+        </a>
+    </div>
+
+    <div class="container-md" style="margin-left: 5em; margin-top: 3em;">
+        <div class="main-carousel d-flex justify-content-md-center">
+            <div class=" rounded-5 bg-light bg-opacity-50">
+                <div id="carouselExampleInterval" class="carousel slide rounded-5" style="height: 400px"
+                     data-bs-ride="carousel">
+                    <div class="carousel-inner rounded-5">
+                        <div class="carousel-item active" data-bs-interval="3000000">
+                            <img src="https://theme.hstatic.net/1000069970/1000992234/14/slideshow_1_2048x2048.jpg?v=1605"
+                                 class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <img src="..." class="d-block w-100 " alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="expand-card mt-5 mb-5 d-flex justify-content-center">
+            <div class="options">
+                <div class="option active" style="--optionBackground:url(https://file.hstatic.net/1000069970/file/gravastar_shark_4_ad9399df18df4e2f981544d0c66d9a3e.png);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">Loa bluetooth GravaStar Mars (Special edition)</div>
+                            <div class="sub">Thương hiệu: GravaStar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://media.discordapp.net/attachments/646934670679998474/1127544766817644594/keyboard.png?width=1006&height=662);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">Bàn phím cơ Milyy Pudding</div>
+                            <div class="sub">Thương hiệu: MILYY</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://media.discordapp.net/attachments/646934670679998474/1127548209762402385/image.png?width=1137&height=662);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">Mô Hình Lắp Ghép Đồng Hồ Gỗ 3D</div>
+                            <div class="sub">The Dream Tourbillon</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://file.hstatic.net/1000069970/file/gravastar_alpha6565w_gan__022b4b5e88f74051a94be4578eb59081.jpg);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">
+                                Sạc đa cổng GravaStar Alpha65</div>
+                            <div class="sub">Thương hiệu: GravaStar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://file.hstatic.net/1000069970/file/wsl3_1__1__21dfea7374c045fbaee5205a96c52acc_grande.jpg);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">Bàn nâng hạ tự động 9SPACE</div>
+                            <div class="sub">Ergonomic Desk Core</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="open-overlay" th:fragment="nav-toogle">
+        <span class="bar-top"></span>
+        <span class="bar-middle"></span>
+        <span class="bar-bottom"></span>
+    </div>
 </div>
+
+<script src="../static/js/home.js"></script>
+<script src="../static/js/nav.js"></script>
 <script th:src="@{/js/home.js}"></script>
-<script th:src="@{/js/add-to-cart.js}"></script>
+<script th:src="@{/js/nav.js}"></script>
 </body>
 </html>
