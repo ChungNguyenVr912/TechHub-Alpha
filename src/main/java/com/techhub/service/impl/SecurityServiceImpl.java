@@ -30,7 +30,7 @@ public class SecurityServiceImpl implements SecurityService {
     @Override
     public boolean isValidToken(String authToken) {
         String jwt = jwtTokenProvider.getJwtFromBearerToken(authToken);
-        if (StringUtils.hasText(jwt) && jwtTokenProvider.validateToken(authToken)) {
+        if (StringUtils.hasText(jwt) && jwtTokenProvider.validateToken(jwt)) {
             return true;
         }
         return false;

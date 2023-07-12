@@ -1,16 +1,23 @@
 package com.techhub.service.impl;
 
 
+import com.techhub.dto.reponse.LoginResponse;
 import com.techhub.dto.reponse.UserResponseDto;
+import com.techhub.dto.request.LoginRequest;
 import com.techhub.dto.request.UserRegisterDto;
 import com.techhub.entity.Role;
 import com.techhub.entity.User;
 import com.techhub.repository.RoleRepository;
 import com.techhub.repository.UserRepository;
+import com.techhub.security.JwtTokenProvider;
 import com.techhub.service.ImageService;
 import com.techhub.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,6 +27,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -31,15 +39,21 @@ public class UserServiceImpl implements UserService {
     private final RoleRepository roleRepository;
     private final ModelMapper modelMapper;
     private final ImageService imageService;
+    private final JwtTokenProvider tokenProvider;
+    private final AuthenticationManager authenticationManager;
 
     public UserServiceImpl(UserRepository userRepository
             , RoleRepository roleRepository
             , ModelMapper modelMapper
-            , ImageService imageService) {
+            , ImageService imageService
+            , JwtTokenProvider tokenProvider
+            , AuthenticationManager authenticationManager) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.modelMapper = modelMapper;
         this.imageService = imageService;
+        this.tokenProvider = tokenProvider;
+        this.authenticationManager = authenticationManager;
     }
 
     @Override
@@ -64,9 +78,40 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponseDto findByUsername(String username) {
         User user = userRepository.findByUsername(username);
+        if (user == null) return null;
         UserResponseDto userResponseDto = new UserResponseDto();
         BeanUtils.copyProperties(user, userResponseDto);
+        boolean isStaffOrAdmin = false;
+        Set<Role> roles = user.getRoles();
+        for (Role role : roles) {
+            if ("ROLE_STAFF".equals(role.getRoleName()) || "ROLE_ADMIN".equals(role.getRoleName())) {
+                isStaffOrAdmin = true;
+                break;
+            }
+        }
+        userResponseDto.setStaff(isStaffOrAdmin);
         return userResponseDto;
+    }
+
+    @Override
+    public LoginResponse authLogin(LoginRequest loginRequest) {
+        Authentication authentication = authenticationManager
+                .authenticate(new UsernamePasswordAuthenticationToken(
+                        loginRequest.getUsername(), loginRequest.getPassword()));
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String token = tokenProvider.generateTokenFromRefreshToken(authentication);
+        String refreshToken = tokenProvider.generateRefreshToken(authentication);
+        return LoginResponse.builder()
+                .token(token)
+                .refreshToken(refreshToken)
+                .build();
+    }
+
+    @Override
+    public UserResponseDto getUserInfo(String bearerToken) {
+        String token = tokenProvider.getJwtFromBearerToken(bearerToken);
+        String username = tokenProvider.getUsernameFromJWT(token);
+        return findByUsername(username);
     }
 
     @Override

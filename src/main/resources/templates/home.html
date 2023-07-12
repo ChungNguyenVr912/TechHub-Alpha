@@ -41,7 +41,7 @@
     <div class="left-option d-flex flex-column align-items-center">
         <div class="table_center">
             <div class="drop-down">
-                <div id="dropDown" class="drop-down__button">
+                <div id="dropDown" class="drop-down__button" >
                     <a href="#" id="account">
                         <i class="fa-regular fa-user fa-2xl" style="color: #d3d3d3;"></i></a>
                 </div>
@@ -71,9 +71,9 @@
         </a>
     </div>
 
-    <div class="container-md" style="margin-left: 5em; margin-top: 3em;">
+    <div class=" position-relative">
         <div class="main-carousel d-flex justify-content-md-center">
-            <div class=" rounded-5 bg-light bg-opacity-50">
+            <div class="shadow rounded-5 bg-light bg-opacity-50 shadow-carousel">
                 <div id="carouselExampleInterval" class="carousel slide rounded-5" style="height: 400px"
                      data-bs-ride="carousel">
                     <div class="carousel-inner rounded-5">
@@ -102,7 +102,7 @@
             </div>
         </div>
 
-        <div class="expand-card mt-5 mb-5 d-flex justify-content-center">
+        <div class="expand-card mt-5 mb-5 d-flex justify-content-center rounded-4 ">
             <div class="options">
                 <div class="option active" style="--optionBackground:url(https://file.hstatic.net/1000069970/file/gravastar_shark_4_ad9399df18df4e2f981544d0c66d9a3e.png);">
                     <div class="shadow"></div>
@@ -175,9 +175,10 @@
     </div>
 </div>
 
-<script src="../static/js/home.js"></script>
-<script src="../static/js/nav.js"></script>
+<!--<script src="../static/js/home.js"></script>-->
+<!--<script src="../static/js/nav.js"></script>-->
 <script th:src="@{/js/home.js}"></script>
+<script th:src="@{/js/refresh-token.js}"></script>
 <script th:src="@{/js/nav.js}"></script>
 </body>
 </html>

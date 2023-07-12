@@ -1,7 +1,9 @@
 package com.techhub.service;
 
 
+import com.techhub.dto.reponse.LoginResponse;
 import com.techhub.dto.reponse.UserResponseDto;
+import com.techhub.dto.request.LoginRequest;
 import com.techhub.dto.request.UserRegisterDto;
 
 import java.io.IOException;
@@ -19,4 +21,8 @@ public interface UserService {
     void remove(UUID id);
 
     UserResponseDto findByUsername(String username);
+
+    LoginResponse authLogin(LoginRequest loginRequest);
+
+    UserResponseDto getUserInfo(String token);
 }

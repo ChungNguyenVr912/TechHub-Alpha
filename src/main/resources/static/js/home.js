@@ -1,42 +1,33 @@
-$(function () {
-    //avatar dropdown
-    var cookieUser = getCookieValue('user');
-    var user;
-    if(cookieUser !== ""){
-        user = JSON.parse(cookieUser);
-    }
-    if (user) {
-        $('#account').html(
-            `<img src="${user.avatar}" alt="avatar" 
+function getUserInfo() {
+    $.ajax(
+        {
+            url: '/api/users/get-info',
+            method: 'get',
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
+            },
+            success: function (response) {
+                let user = response.data;
+                if (user) {
+                    localStorage.setItem('loggedIn', 'true')
+                    $('#dropDown').html(
+                        `<img src="${user.avatar}" alt="avatar" 
                      class="rounded-circle border"
                      style="width:50px; height:50px"/>`
-        )
-    }
-    $('#dropDown').click(function () {
-        if (user) {
-            $('.drop-down').toggleClass('drop-down--active');
-        }else {
-            window.location.replace('/users/login')
+                    )
+                    if (!user.staff){
+                        $('#dashboard').attr('hidden', 'hidden')
+                    }
+                }else {
+                    refreshToken();
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log(status + xhr.responseJSON.message)
+            }
         }
-    });
-
-
-    //logout button
-    $('#logout').click(function () {
-        document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        window.location.replace('/users/login')
-    });
-
-    //expand card
-    $(".option").click(function () {
-        $(".option").removeClass("active");
-        $(this).addClass("active");
-
-    });
-
-
-
-});
+    );
+}
 
 function getCookieValue(cookieName) {
     const name = cookieName + "=";
@@ -53,5 +44,37 @@ function getCookieValue(cookieName) {
     }
     return "";
 }
+$(function () {
+    getUserInfo();
+
+    $('#dropDown').click(function () {
+        let loggedIn = localStorage.getItem('loggedIn')
+        if (loggedIn === 'true') {
+            $('.drop-down').toggleClass('drop-down--active');
+        } else {
+            window.location.replace('/users/login')
+        }
+    });
+    //logout button
+    $('#logout').click(function () {
+        // document.cookie = "accessToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        // document.cookie = "refreshToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        localStorage.clear();
+        window.location.reload();
+    });
+
+    //expand card
+    $(".option").click(function () {
+        $(".option").removeClass("active");
+        $(this).addClass("active");
+
+    });
+
+    $('#dashboard').click(function (){
+        window.location.replace('/admin/dashboard')
+    })
+
+});
+
 
 

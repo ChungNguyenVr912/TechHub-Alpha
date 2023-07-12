@@ -1,0 +1,28 @@
+nav {
+    background-color: #ff950f;
+}
+.logo img{
+    height: 100px;
+    background-color: #232227;
+}
+body{
+    background-color: #dedede;
+}
+#preview {
+    max-height: 15em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.preview{
+    background: white;
+    border-radius: 5px;
+    border: 2px dashed rgb(0, 135, 247);
+    border-image: none;
+    height: 15em;
+    width: 20em;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}

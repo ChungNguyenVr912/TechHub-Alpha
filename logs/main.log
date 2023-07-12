@@ -74,3 +74,343 @@
  at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 62] (through reference chain: com.techhub.dto.request.LoginRequest["rememberMe"])
 2023-07-09 16:11:51,856 +0700 [http-nio-8080-exec-1] ERROR (LoggingAspect.java:30) - Final ex handler: org.springframework.web.bind.MissingRequestHeaderException: Required request header 'Authorization' for method parameter type String is not present
 2023-07-09 16:11:52,443 +0700 [http-nio-8080-exec-1] ERROR (ExceptionController.java:18) - ErrorRequired request header 'Authorization' for method parameter type String is not presentorg.springframework.web.bind.MissingRequestHeaderException: Required request header 'Authorization' for method parameter type String is not present
+2023-07-10 10:20:32,772 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:89) - Expired JWT token
+2023-07-10 10:28:10,236 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:89) - Expired JWT token
+2023-07-10 10:28:54,374 +0700 [http-nio-8080-exec-4] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.MalformedJwtException: Unable to read JSON value: �z��&�r#�$�3S"
+2023-07-10 10:28:54,863 +0700 [http-nio-8080-exec-4] ERROR (ExceptionController.java:18) - ErrorUnable to read JSON value: �z��&�r#�$�3S"io.jsonwebtoken.MalformedJwtException: Unable to read JSON value: �z��&�r#�$�3S"
+2023-07-10 10:31:33,839 +0700 [http-nio-8080-exec-6] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.MalformedJwtException: Unable to read JSON value: �z��&�r#�$�3S"
+2023-07-10 10:31:34,446 +0700 [http-nio-8080-exec-6] ERROR (ExceptionController.java:18) - ErrorUnable to read JSON value: �z��&�r#�$�3S"io.jsonwebtoken.MalformedJwtException: Unable to read JSON value: �z��&�r#�$�3S"
+2023-07-10 10:35:30,234 +0700 [http-nio-8080-exec-2] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.MalformedJwtException: Unable to read JSON value: �z��&�r#�$�3S"
+2023-07-10 10:35:30,786 +0700 [http-nio-8080-exec-2] ERROR (ExceptionController.java:18) - ErrorUnable to read JSON value: �z��&�r#�$�3S"io.jsonwebtoken.MalformedJwtException: Unable to read JSON value: �z��&�r#�$�3S"
+2023-07-10 10:36:02,989 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:90) - Expired JWT token
+2023-07-10 10:39:08,393 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:90) - Expired JWT token
+2023-07-10 10:42:16,491 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:90) - Expired JWT token
+2023-07-10 10:50:45,476 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:90) - Expired JWT token
+2023-07-10 10:54:05,863 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:90) - Expired JWT token
+2023-07-10 10:54:14,325 +0700 [http-nio-8080-exec-2] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.MalformedJwtException: Unable to read JSON value: �z��&�r#�$�3S"
+2023-07-10 10:54:15,112 +0700 [http-nio-8080-exec-2] ERROR (ExceptionController.java:18) - ErrorUnable to read JSON value: �z��&�r#�$�3S"io.jsonwebtoken.MalformedJwtException: Unable to read JSON value: �z��&�r#�$�3S"
+2023-07-10 11:00:17,448 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:90) - Expired JWT token
+2023-07-10 11:04:40,722 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:90) - Expired JWT token
+2023-07-10 11:08:33,117 +0700 [http-nio-8080-exec-3] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.MalformedJwtException: Unable to read JSON value: �z��&�r#�$�3S"
+2023-07-10 11:08:33,698 +0700 [http-nio-8080-exec-3] ERROR (ExceptionController.java:18) - ErrorUnable to read JSON value: �z��&�r#�$�3S"io.jsonwebtoken.MalformedJwtException: Unable to read JSON value: �z��&�r#�$�3S"
+2023-07-10 11:16:18,435 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:93) - Invalid JWT token
+2023-07-10 11:19:07,433 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:95) - Expired JWT token
+2023-07-10 11:21:24,623 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:95) - Expired JWT token
+2023-07-10 11:22:26,857 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:95) - Expired JWT token
+2023-07-10 14:17:56,015 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:95) - Expired JWT token
+2023-07-10 14:17:56,621 +0700 [http-nio-8080-exec-2] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T11:23:12Z. Current time: 2023-07-10T14:17:56Z, a difference of 10484611 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 14:17:57,029 +0700 [http-nio-8080-exec-2] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T11:23:12Z. Current time: 2023-07-10T14:17:56Z, a difference of 10484611 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T11:23:12Z. Current time: 2023-07-10T14:17:56Z, a difference of 10484611 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 14:18:20,701 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:95) - Expired JWT token
+2023-07-10 14:18:21,200 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T11:30:29Z. Current time: 2023-07-10T14:18:21Z, a difference of 10072199 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 14:18:21,551 +0700 [http-nio-8080-exec-5] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T11:30:29Z. Current time: 2023-07-10T14:18:21Z, a difference of 10072199 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T11:30:29Z. Current time: 2023-07-10T14:18:21Z, a difference of 10072199 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 21:21:26,863 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:00:02,048 +0700 [http-nio-8080-exec-1] ERROR (LoggingAspect.java:30) - Final ex handler: org.springframework.web.bind.MissingRequestHeaderException: Required request header 'Authorization' for method parameter type String is not present
+2023-07-10 22:00:02,526 +0700 [http-nio-8080-exec-1] ERROR (ExceptionController.java:18) - ErrorRequired request header 'Authorization' for method parameter type String is not presentorg.springframework.web.bind.MissingRequestHeaderException: Required request header 'Authorization' for method parameter type String is not present
+2023-07-10 22:46:17,578 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:37,596 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:45,472 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:46,034 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:46,451 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:46,859 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:47,205 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:47,623 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:47,979 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:48,332 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:48,724 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:49,132 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:49,580 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:49,933 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:50,335 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:50,710 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:51,101 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:51,663 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:52,141 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:52,614 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:53,103 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:53,567 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:53,936 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:54,850 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:55,210 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:55,573 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:55,900 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:46:56,396 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:52:46,685 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:52:52,410 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:04,086 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:05,144 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:05,699 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:06,084 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:06,428 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:06,866 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:07,320 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:07,773 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:08,201 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:08,558 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:08,954 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:54:55,243 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:55:23,775 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:56:02,780 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 22:56:42,569 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:17:51,411 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:18:08,415 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:18:08,894 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:18:08Z, a difference of 1957889 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:18:09,287 +0700 [http-nio-8080-exec-5] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:18:08Z, a difference of 1957889 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:18:08Z, a difference of 1957889 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:18:25,625 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:18:31,435 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:18:31,890 +0700 [http-nio-8080-exec-6] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:18:31Z, a difference of 1980890 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:18:32,236 +0700 [http-nio-8080-exec-6] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:18:31Z, a difference of 1980890 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:18:31Z, a difference of 1980890 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:18:36,163 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:19:16,788 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:19:17,237 +0700 [http-nio-8080-exec-8] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:19:17Z, a difference of 2026236 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:19:17,608 +0700 [http-nio-8080-exec-8] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:19:17Z, a difference of 2026236 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:19:17Z, a difference of 2026236 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:34:44,570 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:34:45,200 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:34:45,200 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:34:45,605 +0700 [http-nio-8080-exec-2] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:34:45Z, a difference of 2954602 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:34:45,941 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:34:46,316 +0700 [http-nio-8080-exec-2] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:34:45Z, a difference of 2954602 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:34:45Z, a difference of 2954602 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:34:46,645 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:34:46,988 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:34:47,401 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:34:47,755 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:34:47Z, a difference of 2956755 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:34:48,086 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:34:48,483 +0700 [http-nio-8080-exec-5] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:34:47Z, a difference of 2956755 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:34:47Z, a difference of 2956755 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:34:48,867 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:34:49,233 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:34:49,620 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:34:49,945 +0700 [http-nio-8080-exec-10] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:34:49Z, a difference of 2958945 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:34:50,627 +0700 [http-nio-8080-exec-10] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:34:49Z, a difference of 2958945 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:34:49Z, a difference of 2958945 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:11,661 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:12,296 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:12,296 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:12,638 +0700 [http-nio-8080-exec-2] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:12Z, a difference of 2981635 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:12,996 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:13,406 +0700 [http-nio-8080-exec-2] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:12Z, a difference of 2981635 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:12Z, a difference of 2981635 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:13,820 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:14,275 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:14,946 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:15,464 +0700 [http-nio-8080-exec-6] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:15Z, a difference of 2984464 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:15,825 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:16,215 +0700 [http-nio-8080-exec-6] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:15Z, a difference of 2984464 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:15Z, a difference of 2984464 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:16,614 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:17,043 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:17,389 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:17,741 +0700 [http-nio-8080-exec-10] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:17Z, a difference of 2986740 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:18,080 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:18,693 +0700 [http-nio-8080-exec-10] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:17Z, a difference of 2986740 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:17Z, a difference of 2986740 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:19,023 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:19,356 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:19,730 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:20,131 +0700 [http-nio-8080-exec-2] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:20Z, a difference of 2989130 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:20,628 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:21,039 +0700 [http-nio-8080-exec-2] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:20Z, a difference of 2989130 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:20Z, a difference of 2989130 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:21,432 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:21,816 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:22,278 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:22,663 +0700 [http-nio-8080-exec-6] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:22Z, a difference of 2991661 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:23,127 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:23,536 +0700 [http-nio-8080-exec-6] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:22Z, a difference of 2991661 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:22Z, a difference of 2991661 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:23,925 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:24,281 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:24,954 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:35:25,326 +0700 [http-nio-8080-exec-10] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:25Z, a difference of 2994326 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:35:26,211 +0700 [http-nio-8080-exec-10] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:25Z, a difference of 2994326 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:35:25Z, a difference of 2994326 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:36:20,926 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:36:21,584 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:36:21,584 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:36:22,025 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:36:22Z, a difference of 3051022 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:36:22,352 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:36:22,719 +0700 [http-nio-8080-exec-5] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:36:22Z, a difference of 3051022 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:36:22Z, a difference of 3051022 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:36:23,057 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:36:23,461 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:36:24,229 +0700 [http-nio-8080-exec-8] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:36:24Z, a difference of 3053229 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:36:24,951 +0700 [http-nio-8080-exec-8] ERROR (ExceptionController.java:18) - ErrorJWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:36:24Z, a difference of 3053229 milliseconds.  Allowed clock skew: 0 milliseconds.io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T22:45:31Z. Current time: 2023-07-10T23:36:24Z, a difference of 3053229 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:07,141 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:07,641 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:07,641 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:08,090 +0700 [http-nio-8080-exec-3] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:08Z, a difference of 2087 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:08,442 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:08,883 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:09,277 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:09,840 +0700 [http-nio-8080-exec-6] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:09Z, a difference of 3839 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:10,211 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:10,565 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:11,007 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:11,387 +0700 [http-nio-8080-exec-7] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:11Z, a difference of 5386 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:11,934 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:12,260 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:12,627 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:13,009 +0700 [http-nio-8080-exec-1] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:13Z, a difference of 7009 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:13,371 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:13,759 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:14,173 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:14,977 +0700 [http-nio-8080-exec-4] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:14Z, a difference of 8977 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:15,324 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:15,699 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:16,078 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:16,673 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:16Z, a difference of 10673 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:17,082 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:17,467 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:17,805 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:18,211 +0700 [http-nio-8080-exec-10] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:18Z, a difference of 12211 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:18,542 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:18,890 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:19,335 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:19,775 +0700 [http-nio-8080-exec-3] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:19Z, a difference of 13775 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:20,136 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:20,510 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:20,869 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:22,072 +0700 [http-nio-8080-exec-6] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:22Z, a difference of 16072 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:22,517 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:22,927 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:23,257 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:23,585 +0700 [http-nio-8080-exec-7] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:23Z, a difference of 17585 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:23,960 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:24,270 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:24,618 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:24,946 +0700 [http-nio-8080-exec-1] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:24Z, a difference of 18945 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:25,271 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:25,563 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:26,256 +0700 [http-nio-8080-exec-4] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:26Z, a difference of 20256 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:35,477 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:36,049 +0700 [http-nio-8080-exec-1] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:36Z, a difference of 30044 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:36,409 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:36,767 +0700 [http-nio-8080-exec-2] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:36Z, a difference of 30766 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:37,133 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:37,502 +0700 [http-nio-8080-exec-3] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:37Z, a difference of 31502 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:37,844 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:38,189 +0700 [http-nio-8080-exec-4] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:38Z, a difference of 32188 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-10 23:40:38,563 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-10 23:40:38,876 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-10T23:40:06Z. Current time: 2023-07-10T23:40:38Z, a difference of 32875 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 08:13:15,057 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:13:15,652 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:13:15,652 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:14:14,443 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:14:14,447 +0700 [http-nio-8080-exec-2] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T08:10:13Z. Current time: 2023-07-11T08:13:21Z, a difference of 188004 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 08:14:14,443 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:14:15,372 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:14:15,006 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:14:44,828 +0700 [http-nio-8080-exec-10] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T08:10:13Z. Current time: 2023-07-11T08:14:44Z, a difference of 271828 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 08:14:43,377 +0700 [http-nio-8080-exec-8] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T08:10:13Z. Current time: 2023-07-11T08:14:41Z, a difference of 268978 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 08:14:45,910 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:14:45,419 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:15:10,435 +0700 [http-nio-8080-exec-4] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T08:10:13Z. Current time: 2023-07-11T08:15:10Z, a difference of 297435 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 08:28:18,302 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:28:18,858 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:28:18,858 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:28:19,333 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:28:19,704 +0700 [http-nio-8080-exec-9] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T08:10:13Z. Current time: 2023-07-11T08:28:19Z, a difference of 1086699 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 08:28:20,101 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:28:20,491 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:28:21,253 +0700 [http-nio-8080-exec-1] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T08:10:13Z. Current time: 2023-07-11T08:28:21Z, a difference of 1088253 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 08:42:45,619 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:42:46,140 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:42:46,140 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:42:46,487 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:42:46,825 +0700 [http-nio-8080-exec-6] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T08:42:12Z. Current time: 2023-07-11T08:42:46Z, a difference of 34823 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 08:42:47,263 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:42:47,606 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:42:48,324 +0700 [http-nio-8080-exec-8] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T08:42:12Z. Current time: 2023-07-11T08:42:48Z, a difference of 36324 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 08:44:45,549 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:45:14,435 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:45:15,040 +0700 [http-nio-8080-exec-1] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T08:44:02Z. Current time: 2023-07-11T08:45:15Z, a difference of 73040 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 08:47:02,902 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 08:47:42,612 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:94) - Invalid JWT token
+2023-07-11 09:02:50,443 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:04:12,172 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:04:38,331 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:04:47,966 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:06:30,769 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:08:58,231 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:13:13,567 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:13:33,129 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:13:33,913 +0700 [http-nio-8080-exec-8] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T09:12:35Z. Current time: 2023-07-11T09:13:33Z, a difference of 58910 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 09:25:47,105 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:32:25,246 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:36:43,715 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:37:03,551 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:37:04,059 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T09:31:46Z. Current time: 2023-07-11T09:37:04Z, a difference of 318054 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 09:37:19,058 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:37:49,878 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:38:00,104 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:38:00,562 +0700 [http-nio-8080-exec-10] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T09:31:46Z. Current time: 2023-07-11T09:38:00Z, a difference of 374562 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 09:38:09,431 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:38:22,116 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:38:22,594 +0700 [http-nio-8080-exec-8] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T09:31:46Z. Current time: 2023-07-11T09:38:22Z, a difference of 396593 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 09:38:23,668 +0700 [http-nio-8080-exec-6] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:38:24,697 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:38:24,697 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:38:25,092 +0700 [http-nio-8080-exec-7] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T09:31:46Z. Current time: 2023-07-11T09:38:25Z, a difference of 399091 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 09:43:08,254 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:43:08,844 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:43:09,229 +0700 [http-nio-8080-exec-4] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T09:31:46Z. Current time: 2023-07-11T09:43:09Z, a difference of 683226 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 09:43:09,597 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:44:02,806 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:44:03,557 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:48:26,203 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:49:46,246 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:53:08,678 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 09:55:35,088 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 10:02:39,012 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 10:02:53,718 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 10:09:46,224 +0700 [http-nio-8080-exec-2] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 10:10:46,787 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 10:11:21,103 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 10:28:46,681 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 11:28:59,875 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 11:29:00,593 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T10:29:05Z. Current time: 2023-07-11T11:29:00Z, a difference of 3595586 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 11:31:10,644 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 11:31:11,157 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T10:29:05Z. Current time: 2023-07-11T11:31:11Z, a difference of 3726152 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 11:31:16,850 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 11:31:17,463 +0700 [http-nio-8080-exec-8] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T10:29:05Z. Current time: 2023-07-11T11:31:17Z, a difference of 3732461 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 11:32:47,613 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 11:32:48,063 +0700 [http-nio-8080-exec-4] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T11:31:40Z. Current time: 2023-07-11T11:32:48Z, a difference of 68062 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 11:33:34,474 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 11:33:35,090 +0700 [http-nio-8080-exec-4] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T11:31:40Z. Current time: 2023-07-11T11:33:35Z, a difference of 115089 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 11:36:01,544 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 11:36:02,027 +0700 [http-nio-8080-exec-7] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T11:34:26Z. Current time: 2023-07-11T11:36:02Z, a difference of 96026 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 11:40:26,125 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 11:40:26,674 +0700 [http-nio-8080-exec-7] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T11:36:25Z. Current time: 2023-07-11T11:40:26Z, a difference of 241669 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 13:55:56,015 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 13:55:56,582 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T11:41:01Z. Current time: 2023-07-11T13:55:56Z, a difference of 8095577 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 13:57:03,051 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 13:57:03,839 +0700 [http-nio-8080-exec-7] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T13:56:31Z. Current time: 2023-07-11T13:57:03Z, a difference of 32833 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 13:57:47,689 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 13:57:48,138 +0700 [http-nio-8080-exec-4] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T13:56:31Z. Current time: 2023-07-11T13:57:48Z, a difference of 77137 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 13:58:20,965 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 13:58:21,419 +0700 [http-nio-8080-exec-10] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T13:56:31Z. Current time: 2023-07-11T13:58:21Z, a difference of 110418 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 14:01:06,423 +0700 [http-nio-8080-exec-7] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 14:01:07,056 +0700 [http-nio-8080-exec-7] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T13:56:31Z. Current time: 2023-07-11T14:01:07Z, a difference of 276048 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 14:02:18,512 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 14:02:18,968 +0700 [http-nio-8080-exec-10] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T14:02:14Z. Current time: 2023-07-11T14:02:18Z, a difference of 4967 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 14:02:43,545 +0700 [http-nio-8080-exec-3] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 14:02:44,090 +0700 [http-nio-8080-exec-3] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T14:02:37Z. Current time: 2023-07-11T14:02:44Z, a difference of 7089 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 14:20:26,577 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 14:20:27,078 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T14:03:02Z. Current time: 2023-07-11T14:20:27Z, a difference of 1045077 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 14:43:59,675 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 14:44:00,240 +0700 [http-nio-8080-exec-10] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T14:43:50Z. Current time: 2023-07-11T14:44:00Z, a difference of 10237 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 14:46:34,091 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 14:46:34,609 +0700 [http-nio-8080-exec-9] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T14:44:57Z. Current time: 2023-07-11T14:46:34Z, a difference of 97608 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 15:11:07,453 +0700 [http-nio-8080-exec-8] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 15:11:07,926 +0700 [http-nio-8080-exec-8] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T14:46:52Z. Current time: 2023-07-11T15:11:07Z, a difference of 1455925 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 15:14:09,268 +0700 [http-nio-8080-exec-1] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 15:14:09,831 +0700 [http-nio-8080-exec-1] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T15:11:26Z. Current time: 2023-07-11T15:14:09Z, a difference of 163824 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 15:30:17,098 +0700 [http-nio-8080-exec-5] ERROR (JwtTokenProvider.java:96) - Expired JWT token
+2023-07-11 15:30:17,720 +0700 [http-nio-8080-exec-5] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T15:14:28Z. Current time: 2023-07-11T15:30:17Z, a difference of 949714 milliseconds.  Allowed clock skew: 0 milliseconds.
+2023-07-11 15:48:30,223 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:94) - Invalid JWT token
+2023-07-11 15:48:30,833 +0700 [http-nio-8080-exec-4] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+2023-07-11 15:48:31,253 +0700 [http-nio-8080-exec-4] ERROR (ExceptionController.java:19) - ErrorJWT strings must contain exactly 2 period characters. Found: 0io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+2023-07-11 15:59:03,774 +0700 [http-nio-8080-exec-9] ERROR (JwtTokenProvider.java:94) - Invalid JWT token
+2023-07-11 15:59:04,500 +0700 [http-nio-8080-exec-9] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+2023-07-11 15:59:04,860 +0700 [http-nio-8080-exec-9] ERROR (ExceptionController.java:19) - ErrorJWT strings must contain exactly 2 period characters. Found: 0io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+2023-07-11 16:00:01,211 +0700 [http-nio-8080-exec-3] INFO  (LoggingAspect.java:36) - Trying to create user:  minh123
+2023-07-11 16:00:04,445 +0700 [http-nio-8080-exec-3] INFO  (LoggingAspect.java:43) - New user created!
+2023-07-11 16:01:26,786 +0700 [http-nio-8080-exec-4] ERROR (JwtTokenProvider.java:94) - Invalid JWT token
+2023-07-11 16:01:27,263 +0700 [http-nio-8080-exec-4] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+2023-07-11 16:01:27,661 +0700 [http-nio-8080-exec-4] ERROR (ExceptionController.java:19) - ErrorJWT strings must contain exactly 2 period characters. Found: 0io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+2023-07-11 16:16:48,611 +0700 [http-nio-8080-exec-10] ERROR (JwtTokenProvider.java:94) - Invalid JWT token
+2023-07-11 16:16:49,336 +0700 [http-nio-8080-exec-10] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+2023-07-11 16:16:49,735 +0700 [http-nio-8080-exec-10] ERROR (ExceptionController.java:19) - ErrorJWT strings must contain exactly 2 period characters. Found: 0io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+2023-07-11 17:03:10,692 +0700 [http-nio-8080-exec-10] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+2023-07-11 17:03:11,285 +0700 [http-nio-8080-exec-10] ERROR (ExceptionController.java:19) - ErrorJWT strings must contain exactly 2 period characters. Found: 0io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+2023-07-12 08:07:17,606 +0700 [http-nio-8080-exec-6] ERROR (LoggingAspect.java:30) - Final ex handler: io.jsonwebtoken.ExpiredJwtException: JWT expired at 2023-07-11T17:33:36Z. Current time: 2023-07-12T08:07:17Z, a difference of 52421597 milliseconds.  Allowed clock skew: 0 milliseconds.

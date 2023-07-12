@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
@@ -31,10 +33,9 @@ public class AdminRestController {
         this.securityService = securityService;
     }
     @GetMapping({"/users"})
-    public ResponseEntity<?> getAll(@RequestHeader("Authorization") final String authToken, HttpServletRequest request
-            , @CookieValue(value = "accessToken",defaultValue = "") String token) {
+    public ResponseEntity<?> getAll(@RequestHeader("Authorization") final String accessToken, HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
-        if (!securityService.isAuthenticated() && !securityService.isValidToken(authToken)) {
+        if (!securityService.isAuthenticated() && !securityService.isValidToken(accessToken)) {
             return new ResponseEntity<>("Responding with unauthorized error. Message - {}", HttpStatus.UNAUTHORIZED);
         }
         List<UserResponseDto> userResponseDtos = userService.getUsers();
@@ -71,5 +72,9 @@ public class AdminRestController {
             }
         }
         return new ResponseEntity<>(userResponseDtos, HttpStatus.OK);
+    }
+    @GetMapping("/dashboard")
+    public void goToDashboard(HttpServletResponse response) throws IOException {
+        response.sendRedirect("/admin/dashboard");
     }
 }

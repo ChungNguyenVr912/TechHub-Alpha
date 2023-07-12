@@ -15,4 +15,5 @@ public class UserResponseDto {
     private String email;
     private String fullName;
     private String avatar;
+    private boolean isStaff;
 }

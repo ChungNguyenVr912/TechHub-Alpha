@@ -1,6 +1,7 @@
 package com.techhub.controller.exception;
 
 import com.techhub.aspect.LoggingAspect;
+import io.jsonwebtoken.ExpiredJwtException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -21,5 +22,9 @@ public class ExceptionController {
     @ExceptionHandler(DataIntegrityViolationException.class)
     public void handleException(DataIntegrityViolationException e){
         logger.error("Error"+ e);
+    }
+    @ExceptionHandler(ExpiredJwtException.class)
+    public void handleException(ExpiredJwtException e){
+        e.printStackTrace();
     }
 }

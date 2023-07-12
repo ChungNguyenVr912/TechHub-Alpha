@@ -1,6 +1,7 @@
 package com.techhub.dto.reponse;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,10 +13,10 @@ import javax.validation.constraints.NotBlank;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class LoginResponse {
     @NotBlank
     private String message;
-    @Nullable
     private String token;
-    private UserResponseDto user;
+    private String refreshToken;
 }
