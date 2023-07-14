@@ -19,10 +19,13 @@ public class LoggingAspect {
         PropertyConfigurator.configure("src/main/resources/log4j_config/log4j.properties");
     }
     private static final Logger logger = LogManager.getLogger(LoggingAspect.class);
-    @Pointcut("execution(* com.techhub.controller.exception.ExceptionController.handleException(..))")
+    @Pointcut("execution(* com.techhub.controller.exception.ExceptionController.handleFinalException(..))")
     public void exceptionMethod(){}
     @Pointcut("execution(* com.techhub.service.impl.UserServiceImpl.save(..))")
     public void saveUserMethod(){}
+
+    @Pointcut("execution(* com.techhub.service.impl.ProductServiceImpl.save(..))")
+    public void saveProductMethod(){}
 
     @Before("exceptionMethod()")
     public void exceptionLogging(JoinPoint joinPoint){
@@ -45,5 +48,15 @@ public class LoggingAspect {
     @AfterThrowing(value = "saveUserMethod()", throwing = "e")
     public void createUserFailLogging(Exception e){
         logger.info("Fail to create user!" + e);
+    }
+
+    @Before("saveProductMethod()")
+    public void newProductLogging(JoinPoint joinPoint){
+        String product = joinPoint.getArgs()[0].toString();
+        logger.info("Try to create new product:\n" + product);
+    }
+    @AfterReturning("saveProductMethod()")
+    public void newProductLogging(){
+        logger.info("New product created successfully!");
     }
 }

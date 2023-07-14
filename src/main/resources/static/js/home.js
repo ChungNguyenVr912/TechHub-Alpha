@@ -19,7 +19,7 @@ function getUserInfo() {
                         $('#dashboard').attr('hidden', 'hidden')
                     }
                 }else {
-                    refreshToken();
+                    refreshToken().then(result => getUserInfo());
                 }
             },
             error: function (xhr, status, error) {

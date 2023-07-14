@@ -9,9 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ProductResponseDto {
+public class ProductDisplayDto {
     private Long id;
     private String name;
     private String description;
     private String image;
+    private Long price;
+    private boolean lowOnStock;
 }

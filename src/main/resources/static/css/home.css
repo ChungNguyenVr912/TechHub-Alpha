@@ -46,7 +46,7 @@ body{
 
 .carousel-item img{
     border-radius: 2rem;
-    width: 100%;
+    /*width: 100%;*/
     height: 400px;
 }
 .shadow-carousel{
@@ -203,4 +203,21 @@ body{
 
 .drop-down__item:hover:before{
     display:block;
+}
+
+.card img{
+}
+.card{
+    border-radius: 20px;
+    box-shadow: #29363B;
+}
+.outer-card{
+    padding: 10px;
+}
+.card-body{
+    height: 10em;
+    overflow: auto;
+}
+.card-body a{
+    margin-bottom: 5px;
 }

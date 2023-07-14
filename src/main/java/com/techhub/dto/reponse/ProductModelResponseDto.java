@@ -6,12 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class ProductResponseDto {
-    private Long id;
-    private String name;
+public class ProductModelResponseDto {
+    private Long productId;
+    private String productName;
     private String description;
+    private Long price;
     private String image;
 }

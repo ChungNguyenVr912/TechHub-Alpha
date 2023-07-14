@@ -5,6 +5,7 @@ import com.techhub.dto.reponse.LoginResponse;
 import com.techhub.dto.reponse.UserResponseDto;
 import com.techhub.dto.request.LoginRequest;
 import com.techhub.dto.request.UserRegisterDto;
+import com.techhub.dto.request.UserUpdateRequestDto;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,4 +26,6 @@ public interface UserService {
     LoginResponse authLogin(LoginRequest loginRequest);
 
     UserResponseDto getUserInfo(String token);
+
+    void updateUser(UserUpdateRequestDto userUpdateRequestDto, String token);
 }

@@ -38,6 +38,11 @@
 </div>
 
 <div class="home">
+    <div class="open-overlay" th:fragment="nav-toogle">
+        <span class="bar-top"></span>
+        <span class="bar-middle"></span>
+        <span class="bar-bottom"></span>
+    </div>
     <div class="left-option d-flex flex-column align-items-center">
         <div class="table_center">
             <div class="drop-down">
@@ -71,34 +76,55 @@
         </a>
     </div>
 
-    <div class=" position-relative">
-        <div class="main-carousel d-flex justify-content-md-center">
-            <div class="shadow rounded-5 bg-light bg-opacity-50 shadow-carousel">
-                <div id="carouselExampleInterval" class="carousel slide rounded-5" style="height: 400px"
-                     data-bs-ride="carousel">
-                    <div class="carousel-inner rounded-5">
-                        <div class="carousel-item active" data-bs-interval="3000000">
-                            <img src="https://theme.hstatic.net/1000069970/1000992234/14/slideshow_1_2048x2048.jpg?v=1605"
-                                 class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="4000">
-                            <img src="..." class="d-block w-100 " alt="...">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="4000">
-                            <img src="..." class="d-block w-100" alt="...">
-                        </div>
+    <div class="mt-4">
+        <div class="main-carousel d-flex justify-content-center">
+            <div id="carouselExampleRide" class="carousel slide rounded-5" data-bs-ride="true">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://theme.hstatic.net/1000069970/1000992234/14/slideshow_1_2048x2048.jpg?v=1605" class="d-block w-100" alt="...">
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                            data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                            data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <div class="carousel-item">
+                        <img src="https://theme.hstatic.net/1000069970/1000992234/14/slideshow_1_2048x2048.jpg?v=1605" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://theme.hstatic.net/1000069970/1000992234/14/slideshow_1_2048x2048.jpg?v=1605" class="d-block w-100" alt="...">
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div class="shadow rounded-5 shadow-carousel">
+<!--                <div id="carouselExampleInterval" class="carousel slide rounded-5"-->
+<!--                     data-bs-ride="carousel">-->
+<!--                    <div class="carousel-inner rounded-5">-->
+<!--                        <div class="carousel-item active" data-bs-interval="3000">-->
+<!--                            <img src="https://theme.hstatic.net/1000069970/1000992234/14/slideshow_1_2048x2048.jpg?v=1605" alt="...">-->
+<!--                        </div>-->
+<!--                        <div class="carousel-item" data-bs-interval="4000">-->
+<!--                            <img src="https://theme.hstatic.net/1000069970/1000992234/14/slideshow_1_2048x2048.jpg?v=1605" alt="...">-->
+<!--                        </div>-->
+<!--                        <div class="carousel-item" data-bs-interval="4000">-->
+<!--                            <img src="https://theme.hstatic.net/1000069970/1000992234/14/slideshow_1_2048x2048.jpg?v=1605" alt="...">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"-->
+<!--                            data-bs-slide="prev">-->
+<!--                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--                        <span class="visually-hidden">Previous</span>-->
+<!--                    </button>-->
+<!--                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"-->
+<!--                            data-bs-slide="next">-->
+<!--                        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--                        <span class="visually-hidden">Next</span>-->
+<!--                    </button>-->
+<!--                </div>-->
             </div>
         </div>
 
@@ -168,10 +194,16 @@
             </div>
         </div>
     </div>
-    <div class="open-overlay" th:fragment="nav-toogle">
-        <span class="bar-top"></span>
-        <span class="bar-middle"></span>
-        <span class="bar-bottom"></span>
+
+    <div class="flex-wrap mt-4 p-4 rounded-4 bg-light bg-opacity-75 d-flex" id="product-area">
+<!--        <div class="card col-lg-3 col-md-6">-->
+<!--            <img src="https://media.discordapp.net/attachments/646934670679998474/1128854655418519672/ips_22_e8285f98270941708218a5eff00fbfc0_large.png?width=600&height=600" class="card-img-top" alt="...">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title">Đồng hồ để bàn RGB LED Clock Rainbow Time</h5>-->
+<!--                <p class="card-text">Đồng hồ để bàn RGB LED Clock Rainbow Time vẻ đẹp bền bỉ với thời gian. Góc làm việc luôn là nơi để cảm hứng sáng tạo phát huy mạnh mẽ và là nơi góp phần giúp tăng hiệu suất làm việc gấp nhiều lần. Vậy thì làm gì khi góc làm việc quá quen thuộc đến nỗi trở nên nhàm chán đây? Sắm ngay cho mình chiếc đồng hồ để bàn RGB LED Clock ngay để nâng cấp chốn cũ quen thuộc thôi chứ còn chần chờ gì nữa bạn ơi!</p>-->
+<!--                <a href="#" class="btn btn-primary position-absolute sticky-bottom">Add to cart</a>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </div>
 
@@ -180,5 +212,6 @@
 <script th:src="@{/js/home.js}"></script>
 <script th:src="@{/js/refresh-token.js}"></script>
 <script th:src="@{/js/nav.js}"></script>
+<script th:src="@{/js/show-product.js}"></script>
 </body>
 </html>

@@ -91,7 +91,7 @@ public class SecurityConfiguration {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.authorizeHttpRequests()
-                .antMatchers("/api/admin/**")
+                .antMatchers("/api/admin/**","/api/manager/products/**")
                 .hasRole("ADMIN");
 
         http.logout()

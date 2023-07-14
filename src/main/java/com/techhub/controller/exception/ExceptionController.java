@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ExceptionController {
     private static final Logger logger = LogManager.getLogger(LoggingAspect.class);
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> handleException(Exception e){
+    public ResponseEntity<?> handleFinalException(Exception e){
         e.printStackTrace();
         logger.error("Error"+ e.getMessage() + e);
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
     @ExceptionHandler(DataIntegrityViolationException.class)
     public void handleException(DataIntegrityViolationException e){

@@ -31,7 +31,7 @@
     <div class="col-md-4 d-flex justify-content-md-end pe-2">
         <span id="greeting"></span>
         <span id="avatar" class="rounded-circle">
-            <img src="" alt="avatar" class="rounded-circle">
+
         </span>
     </div>
 </nav>
@@ -57,65 +57,75 @@
                         <div class="mb-4 d-flex">
                             <div class="col-lg-6 me-2">
                                 <label for="product-name" class="form-label">Tên:</label>
-                                <input type="text" class="form-control" required id="product-name"
+                                <input type="text" class="form-control" id="product-name"
                                        placeholder="Sản phẩm mới">
                             </div>
                             <div class="col-lg-4">
                                 <label for="product-history" class="form-label">Lịch sử sản phẩm:</label>
                                 <select name="" id="product-history" class="form-select">
-                                    <option value="0" selected disabled>Chọn một sản phẩm có sẵn</option>
+                                    <option value="0" selected>Chọn loại sản phẩm có sẵn</option>
                                 </select>
                             </div>
                         </div>
+                        <div class="mb-4 d-flex">
+                            <div class="col-lg-8 col-md-8 col-sm-12 me-2">
+                                <label for="product-description" class="form-label">Mô tả sản phẩm</label>
+                                <textarea class="form-control" id="product-description"
+                                       placeholder="Thêm mô tả"></textarea>
+                            </div>
+                        </div>
                         <div class="row d-flex mb-4">
-                            <div class="col-md-6 col-sm-12 col-lg-5">
+                            <div class="col-md-5 col-sm-10 col-lg-5">
                                 <label for="variant-1" class="form-label me-2">Phân loại nhóm 1:</label>
-                                <div id="variant-group-1">
+                                <div id="variant-group-1" class="d-flex">
                                     <select name="" id="variant-1" class="form-control">
                                         <option value="0" disabled selected>Chọn phân loại</option>
                                     </select>
                                 </div>
-                                <label for="variant-value-1" class="form-label me-2">Variant:</label>
+                                <label for="variant-value-1" class="form-label me-2 mt-2">Variant:</label>
                                 <div>
                                     <select name="" id="variant-value-1" class="form-control">
-                                        <option value="0" disabled selected>Chọn variant</option>
+                                        <option value="0" selected>Chọn variant</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-12 col-lg-5">
+                            <div class="col-md-5 col-sm-10 col-lg-5">
                                 <label for="variant-2" class="form-label me-2">Phân loại nhóm 2:</label>
-                                <div id="variant-group-2">
+                                <div id="variant-group-2" class="d-flex">
                                     <select name="" id="variant-2" class="form-control">
                                         <option value="0" disabled selected>Chọn phân loại</option>
                                     </select>
                                 </div>
-                                <label for="variant-value-2" class="form-label me-2">Variant:</label>
-                                <div>
+                                <label for="variant-value-2" class="form-label me-2 mt-2">Variant:</label>
+                                <div >
                                     <select name="" id="variant-value-2" class="form-control">
-                                        <option value="0" disabled selected>Chọn variant</option>
+                                        <option value="0" selected>Chọn variant</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-info" id="add-variant"></button>
                             </div>
                         </div>
                         <div class="row d-flex">
                             <div class="col-lg-4">
-                                <div class="">
+                                <div class="mb-2">
                                     <label for="product-price" class="form-label me-2">Giá sản phẩm:</label>
                                     <input type="number" class="form-control" required id="product-price"
                                            placeholder="Nhập giá sản phẩm">
                                 </div>
-                                <div class="">
+                                <div class="mb-2">
                                     <label for="product-stock" class="form-label me-2">Số lượng:</label>
                                     <input type="number" class="form-control" required id="product-stock"
                                            placeholder="Nhập số lượng">
                                 </div>
                                 <div class="mb-2">
                                     <label for="product-img" class="form-label me-2">Upload hình ảnh sản phẩm:</label>
-                                    <input type="file" multiple accept=".jpeg,.png,.jpg" class="form-control" required id="product-img"
+                                    <input type="file" accept=".jpeg,.png,.jpg" class="form-control" id="product-img"
                                            placeholder="Chọn hình ảnh hiển thị">
                                 </div>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-8 d-flex justify-content-center">
                                 <div class="preview justify-content-center">
                                     <img id="preview" class="rounded-2" src="#" alt=""
                                          hidden="hidden">
@@ -137,5 +147,6 @@
 <script th:src="@{/js/dashboard.js}"></script>
 <script th:src="@{/js/refresh-token.js}"></script>
 <script th:src="@{/js/file-drop.js}"></script>
+<script th:src="@{/js/adding-product.js}"></script>
 </body>
 </html>

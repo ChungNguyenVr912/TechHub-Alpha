@@ -1,36 +1,7 @@
 $(function () {
     getUserList();
+    getUserInfo();
 });
-function refreshToken() {
-    return new Promise((resolve, reject) => {
-        fetch('/api/auth/refresh-token', {
-            method: 'GET',
-            credentials: 'include',
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('refreshToken')}`,
-            },
-        })
-            .then(response => {
-                if (response.ok) {
-                    return response.text()
-                } else {
-                    console.log('Refresh token expired!');
-                    window.location.replace('/users/login')
-                }
-            })
-            .then(responseData => {
-                let newAccessToken = (JSON.parse(responseData)).accessToken;
-                localStorage.setItem('accessToken', newAccessToken);
-                console.log('token refreshed!');
-            })
-            .catch(error => {
-                console.log(error)
-            });
-        resolve('done');
-    });
-
-
-}
 
 function getUserList() {
     fetch('/api/admin/users', {
@@ -61,7 +32,7 @@ function getUserList() {
                 listUser.forEach(function (user) {
                     $('#show-users').append(
                         `<div class="d-flex justify-content-between">
-                             <div class="col-2 rounded-2"><img height="100px" width="100px" src="${user.avatar}" alt="avatar"></div>
+                             <div class="col-2 rounded-2"><img class="rounded-circle" height="100px" width="100px" src="${user.avatar}" alt="avatar"></div>
                              <div class="col-2">${user.username}</div>
                              <div class="col-3">${user.fullName}</div>
                              <div class="col-auto">${user.email}</div>
@@ -89,10 +60,15 @@ function getUserInfo(){
             success: function (response) {
                 let user = response.data;
                 if (user) {
-
                     if (!user.staff){
                         window.location.replace('/users/login')
                     }
+                    $('#avatar').html(
+                        `<img src="${user.avatar}" alt="avatar" width="100px" height="100px" class="rounded-circle">`
+                    );
+                    $('#greeting').html(
+                        `Hi! mr ${user.username}`
+                    )
                 }else {
                     refreshToken().then(result => getUserInfo());
                 }

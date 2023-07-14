@@ -5,6 +5,7 @@ import com.techhub.dto.reponse.LoginResponse;
 import com.techhub.dto.reponse.UserResponseDto;
 import com.techhub.dto.request.LoginRequest;
 import com.techhub.dto.request.UserRegisterDto;
+import com.techhub.dto.request.UserUpdateRequestDto;
 import com.techhub.entity.Role;
 import com.techhub.entity.User;
 import com.techhub.repository.RoleRepository;
@@ -12,6 +13,7 @@ import com.techhub.repository.UserRepository;
 import com.techhub.security.JwtTokenProvider;
 import com.techhub.service.ImageService;
 import com.techhub.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -34,6 +36,7 @@ import java.util.stream.StreamSupport;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
@@ -41,20 +44,6 @@ public class UserServiceImpl implements UserService {
     private final ImageService imageService;
     private final JwtTokenProvider tokenProvider;
     private final AuthenticationManager authenticationManager;
-
-    public UserServiceImpl(UserRepository userRepository
-            , RoleRepository roleRepository
-            , ModelMapper modelMapper
-            , ImageService imageService
-            , JwtTokenProvider tokenProvider
-            , AuthenticationManager authenticationManager) {
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
-        this.modelMapper = modelMapper;
-        this.imageService = imageService;
-        this.tokenProvider = tokenProvider;
-        this.authenticationManager = authenticationManager;
-    }
 
     @Override
     public Iterable<UserResponseDto> findAll() {
@@ -112,6 +101,15 @@ public class UserServiceImpl implements UserService {
         String token = tokenProvider.getJwtFromBearerToken(bearerToken);
         String username = tokenProvider.getUsernameFromJWT(token);
         return findByUsername(username);
+    }
+
+    @Override
+    public void updateUser(UserUpdateRequestDto userUpdateRequestDto, String token) {
+        String jwtToken = tokenProvider.getJwtFromBearerToken(token);
+        String username = tokenProvider.getUsernameFromJWT(jwtToken);
+        User user = userRepository.findByUsername(username);
+        user.setFullName(userUpdateRequestDto.getFullName());
+        user.setEmail(userUpdateRequestDto.getEmail());
     }
 
     @Override
