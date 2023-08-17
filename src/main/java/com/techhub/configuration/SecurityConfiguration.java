@@ -2,12 +2,12 @@ package com.techhub.configuration;
 
 import com.techhub.repository.UserRepository;
 import com.techhub.security.JwtAuthEntryPoint;
+import com.techhub.security.JwtAuthFilter;
 import com.techhub.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -28,6 +28,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import javax.servlet.Filter;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
 
 //@EnableAutoConfiguration
 @EnableWebSecurity
@@ -69,7 +70,7 @@ public class SecurityConfiguration {
         CorsConfiguration corsConfig = new CorsConfiguration();
         corsConfig.addAllowedOrigin("*");
         corsConfig.addAllowedHeader("*");
-        corsConfig.addAllowedMethod("*");
+        corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/*", corsConfig);
         return source;
@@ -119,9 +120,9 @@ public class SecurityConfiguration {
                 .tokenRepository(this.persistentTokenRepository())
                 .tokenValiditySeconds(7 * 24 * 60 * 60);//7 days
 
-
         // Use JwtAuthorizationFilter to check token -> get user info
         http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
+
         return http.build();
     }
 

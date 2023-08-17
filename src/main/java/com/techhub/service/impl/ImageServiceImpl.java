@@ -79,9 +79,7 @@ public class ImageServiceImpl implements ImageService {
     @Configuration
     @ConfigurationProperties(prefix = "firebase")
     public static class Properties {
-
         private String bucketName;
-
         private String imageUrl;
     }
 }

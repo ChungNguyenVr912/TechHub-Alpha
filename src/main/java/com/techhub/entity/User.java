@@ -30,7 +30,7 @@ public class User {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
-    UUID id;
+    private UUID id;
     @NotBlank
     private String username;
     @NotBlank

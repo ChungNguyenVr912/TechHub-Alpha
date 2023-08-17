@@ -9,42 +9,11 @@ $(function () {
             password,
             rememberMe
         }
-        console.log(JSON.stringify(form))
-        console.log('debug')
-        // $.ajax(
-        //     {
-        //         url: '/api/auth/login',
-        //         type: 'POST',
-        //         data: JSON.stringify(form),
-        //         processData: false,
-        //         contentType: 'application/json',
-        //         success: function(response,status,jqXHR) {
-        //             console.log(jqXHR+' : '+status);
-        //             localStorage.setItem('accessToken', response.token)
-        //             localStorage.setItem('refreshToken', response.refreshToken)
-        //             setTokenCookie('token',response.token,7)
-        //             setCookie('user',JSON.stringify(response.user),7)
-        //
-        //             $('#desc').html(response.message);
-        //             launch_toast();
-        //             setTimeout(function (){
-        //                 window.location.replace('/home');},1500)
-        //
-        //         },
-        //         error: function(xhr, status, error) {
-        //             $('#desc').html(xhr.responseJSON.message);
-        //             launch_toast();
-        //             console.log(error.status + ':' + status);
-        //         }
-        //     }
-        // );
-
 
         fetch('/api/auth/login', {
             method: 'post',
             credentials: 'include',
             headers: {
-                // 'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(form)
@@ -58,13 +27,10 @@ $(function () {
                 }
             })
             .then(response => {
-                let data = JSON.parse(response);
-                localStorage.setItem('accessToken', data.token)
-                localStorage.setItem('refreshToken', data.refreshToken)
-                setTokenCookie('token', data.token, 7)
-                setCookie('user', JSON.stringify(data.user), 7)
-                $('#desc').html(data.message);
-                // launch_toast();
+                const responseData = JSON.parse(response)
+                localStorage.setItem('token', responseData.token)
+                localStorage.setItem('refreshToken', responseData.refreshToken)
+                $('#desc').html(response.message);
                 loginAlert();
             });
     });
@@ -92,7 +58,7 @@ function launch_toast() {
     }, 3000);
 }
 
-function loginAlert(){
+function loginAlert() {
     let timerInterval
     Swal.fire({
         title: 'Login success!',
@@ -110,7 +76,6 @@ function loginAlert(){
             clearInterval(timerInterval)
         }
     }).then((result) => {
-        /* Read more about handling dismissals below */
         if (result.dismiss === Swal.DismissReason.timer) {
             window.location.replace('/home')
         }

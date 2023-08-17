@@ -4,25 +4,36 @@ function getUserInfo() {
             url: '/api/users/get-info',
             method: 'get',
             headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
             },
-            success: function (response) {
+            success: async function (response) {
                 let user = response.data;
                 if (user) {
+                    console.log('login success!')
                     localStorage.setItem('loggedIn', 'true')
                     $('#dropDown').html(
                         `<img src="${user.avatar}" alt="avatar" 
                      class="rounded-circle border"
                      style="width:50px; height:50px"/>`
                     )
-                    if (!user.staff){
+                    if (!user.staff) {
                         $('#dashboard').attr('hidden', 'hidden')
                     }
-                }else {
-                    refreshToken().then(result => getUserInfo());
+                } else {
+                    try {
+                        let response = await refreshToken();
+                        if (response === 'success')
+                            console.log("token refreshed!")
+                        getUserInfo();
+                    } catch (error) {
+                        console.error('Fail to refresh token')
+                        window.location.replace('/users/login')
+                    }
+
                 }
             },
             error: function (xhr, status, error) {
+                console.log("status: " + status)
                 console.log(status + xhr.responseJSON.message)
             }
         }
@@ -44,6 +55,7 @@ function getCookieValue(cookieName) {
     }
     return "";
 }
+
 $(function () {
     getUserInfo();
 
@@ -57,8 +69,6 @@ $(function () {
     });
     //logout button
     $('#logout').click(function () {
-        // document.cookie = "accessToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        // document.cookie = "refreshToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         localStorage.clear();
         window.location.reload();
     });
@@ -70,7 +80,7 @@ $(function () {
 
     });
 
-    $('#dashboard').click(function (){
+    $('#dashboard').click(function () {
         window.location.replace('/admin/dashboard')
     })
 

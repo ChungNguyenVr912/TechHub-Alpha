@@ -27,7 +27,7 @@ public class JwtTokenProvider {
     @Value("${app.jwtExpirationInMs}") //30min
     private int jwtExpirationInMs;
 
-    public String generateTokenFromRefreshToken(Authentication authentication) {
+    public String generateToken(Authentication authentication) {
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + jwtExpirationInMs);
         return Jwts.builder()
@@ -38,7 +38,7 @@ public class JwtTokenProvider {
                 .compact();
     }
 
-    public String generateTokenFromRefreshToken(String bearerRefreshToken) {
+    public String generateToken(String bearerRefreshToken) {
         String refreshToken = getJwtFromBearerToken(bearerRefreshToken);
         String username = getUsernameFromJWT(refreshToken);
         Date now = new Date();

@@ -6,7 +6,6 @@ import com.techhub.dto.request.LoginRequest;
 import com.techhub.security.JwtTokenProvider;
 import com.techhub.service.SecurityService;
 import com.techhub.service.UserService;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -44,16 +42,14 @@ public class AuthController {
 
             Cookie httpOnlyCookie = new Cookie("accessToken", loginResponse.getToken());
             httpOnlyCookie.setHttpOnly(true);
-
-            HttpHeaders headers = new HttpHeaders();
-            headers.add(HttpHeaders.SET_COOKIE, httpOnlyCookie.toString());
-
-            return ResponseEntity.ok()
-                    .headers(headers)
-                    .body(loginResponse);
+            httpOnlyCookie.setSecure(true);
+            httpOnlyCookie.setPath("/");
+            httpOnlyCookie.setMaxAge(60 * 60); // default age: Session
+            response.addCookie(httpOnlyCookie);
+            return new ResponseEntity<>(loginResponse, HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
-            loginResponse.setMessage("Đăng nhập thất bại!");
+            loginResponse.setMessage("Login fail!");
             return new ResponseEntity<>(loginResponse, HttpStatus.BAD_REQUEST);
         }
     }
@@ -65,7 +61,7 @@ public class AuthController {
                     new RefreshTokenResponse("Invalid refresh token or expired!", null)
                     , HttpStatus.UNAUTHORIZED);
         } else {
-            String accessToken = tokenProvider.generateTokenFromRefreshToken(refreshToken);
+            String accessToken = tokenProvider.generateToken(refreshToken);
             return new ResponseEntity<>(
                     new RefreshTokenResponse("success!", accessToken)
                     , HttpStatus.ACCEPTED);

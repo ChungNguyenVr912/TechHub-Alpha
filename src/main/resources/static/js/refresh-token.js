@@ -23,6 +23,7 @@ function refreshToken() {
             .catch(error => {
                 console.log(error)
             });
-        resolve('done');
+        resolve('success');
+        reject('fail')
     });
 }
