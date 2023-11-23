@@ -13,6 +13,6 @@ public class LogData {
     private String content;
 
     public LogData(String message, String level, long timestamp) {
-        content = String.format("%s **%s** %s", new Date(timestamp), level, message);
+        content = String.format("[**%s**] %s %s", level, new Date(timestamp), message);
     }
 }
